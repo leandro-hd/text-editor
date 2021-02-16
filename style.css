@@ -1,0 +1,198 @@
+body {
+  background-color: #E9E3CE;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tools {
+  display: grid;
+  grid-template-columns: 3fr 3fr repeat(8, 1fr) 3fr 3fr;
+  grid-template-rows: 1fr 1fr;
+  max-width: 960px;
+  height: 160px;
+  margin-top: 16px;
+  background-color: #EEE;
+  border: 1px solid #EEE;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  padding-top: 16px;
+}
+
+.copy {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+}
+
+.textCopy {
+  grid-column: 1;
+  grid-row: 2;
+  text-align: center;
+}
+
+.col-2 {
+  font-size: 0.8rem;
+}
+
+.cut {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.paste {
+  display: flex;
+  align-items: center;
+  margin-top: 16px;
+  cursor: pointer;
+}
+
+.col-3 {
+  grid-column: span 2;
+}
+
+.select {
+  font-family: 'Poppins', sans-serif;
+  border: 1px solid #BBB;
+  border-radius: 8px;
+  padding: 2px;
+  outline: none;
+}
+
+.fontSize {
+  margin-top: 32px;
+}
+
+.uppercase {
+  margin-top: 32px;
+  margin-left: 4px;
+  cursor: pointer;
+}
+
+.import {
+  grid-column: span 8/11;
+  grid-row: 2;
+  font-weight: bold;
+  background-color: #DC3545;
+  margin: 16px;
+  border: 1px solid #DC3545;
+  border-radius: 16px;
+  outline: none;
+  cursor: pointer;
+}
+
+.import:hover{
+        -webkit-transform: scale(0.9);
+        -ms-transform: scale(0.9);
+        transform: scale(0.9);
+        transition: 0.8s;
+}
+
+.col-5 {
+  grid-column: span 2;
+}
+
+.color {
+  margin-left: 4px;
+}
+
+.red {
+  background-color: #DC3545;
+}
+
+.green {
+  background-color: #28A745;
+}
+
+.blue {
+  background-color: #007BDF
+}
+
+.yellow {
+  background-color: #FFC107;
+}
+
+.gray {
+  background-color: #6C757D;
+}
+
+.black {
+  background-color: #000;
+}
+
+.textTransform {
+  margin-top: 32px;
+  cursor: pointer;
+}
+
+.left, .center, .right, .justify {
+  cursor: pointer;
+}
+
+.boldItalic {
+  margin-top: 16px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.underlineStrikethrough {
+  margin-top: 16px;
+}
+
+.subscribeSuperscribe {
+  margin-top: 16px;
+}
+
+.lists {
+  margin-top: 16px;
+}
+
+.col-11 {
+  font-size: 0.8rem;
+}
+
+.images {
+  display: flex;
+  align-items: center;
+  margin-left: 8px;
+  cursor: pointer;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  margin-top: 16px;
+  margin-left: 8px;
+  cursor: pointer;
+}
+
+.save {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+}
+
+.textSave {
+  grid-column: 12;
+  grid-row: 2;
+  text-align: center;
+}
+
+.textarea {
+  font-family: 'Poppins', sans-serif;
+  font-size: 12pt;
+  background-color: #FFF;
+  border: 1px solid #DDD;
+  padding: 16px;
+  outline: none;
+}

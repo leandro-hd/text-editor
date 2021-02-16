@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Title -->
+    <title>Editor de Texto</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- CSS-->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- JavaScript -->
+    <link rel="stylesheet" href="script.js">
+
+    <!-- Fonts-->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <div class="sheet">
+    <div class="tools">
+      <div class="copy">
+        <img src="icons/copy.png" alt="Copiar" onclick="copy()">
+      </div>
+      <div class="textCopy">
+        <span class="action">Copiar</span>
+      </div>
+      <div class="col-2">
+        <div class="cut">
+          <img src="icons/cut.png" alt="Recortar" onclick="cut()">
+          <span class="action">Recortar</span>
+        </div>
+        <div class="paste">
+          <img src="icons/paste.png" alt="Colar" onclick="paste()">
+          <span class="action">Colar</span>
+        </div>
+      </div>
+      <div class="col-3"> 
+        <div class="font">
+          <select name="fontFamily" class="select fontFamily" id="fontFamily">
+            <option value="Arial">Arial</option>
+            <option value="Arial">Roboto</option>
+            <option value="Arial" selected>Poppins</option>
+          </select>
+        </div>        
+        <div class="size">
+          <select name="fontSize" class="select fontSize" id="fontSize">
+            <option value="10">10</option>
+            <option value="12">12</option>
+            <option value="14" selected>14</option>
+            <option value="16">16</option>
+            <option value="20">20</option>
+          </select>
+          <span class="action uppercase" onclick="uppercase()">AA</span>
+        </div>
+      </div>
+
+      <button type="button" class="import">IMPORTAR ARQUIVO EM PDF</button>
+
+      <div class="col-5">
+        <div class="color">
+          <select name="fontColor" class="select fontColor" id="fontColor">
+            <option value="red" class="red"></option>
+            <option value="green" class="green"></option>
+            <option value="blue" class="blue"></option>
+            <option value="yellow" class="yellow"></option>
+            <option value="gray" class="gray"></option>
+            <option value="black" class="black"></option>
+          </select>
+        </div>        
+        <div class="textTransform">
+          <span class="action" onclick="lowercase()">aa</span>
+          <span class="action" onclick="capitalize()">Aa</span>
+        </div>
+      </div>
+      <div class="col-7">
+        <div class="left">
+          <img src="icons/left.png" alt="Alinhar à esquerda" onclick="left()">
+        </div>
+        <div class="boldItalic">
+          <select name="boldItalic" class="select" id="boldItalic">
+            <option value="bold" class="bold">N</option>
+            <option value="italic" class="italic">I</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-8">
+        <div class="center">
+          <img src="icons/center.png" alt="Alinhado ao centro" onclick="center()">
+        </div>
+        <div class="underlineStrikethrough">
+          <select name="underlineStrikethrough" class="select" id="underlineStrikethrough">
+            <option value="underline" class="underline">_</option>
+            <option value="strikethrough" class="strikethrough">-</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-9">
+        <div class="right">
+          <img src="icons/right.png" alt="Alinhar à direita" onclick="right()">
+        </div>
+        <div class="subscribeSuperscribe">
+          <select name="subscribeSuperscribe" class="select" id="subscribeSuperscribe">
+            <option value="subscribe" class="subscribe">₂</option>
+            <option value="superscribe" class="superscribe">²</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-10">
+        <div class="justify">
+          <img src="icons/justify.png" alt="Justificar" onclick="justify()">
+        </div>
+        <div class="lists">
+          <select name="lists" class="select" id="lists">
+            <option value="ol" class="ol">a)</option>
+            <option value="ul" class="ul">•</option>
+          </select>
+        </div>
+      </div>      
+      <div class="col-11">
+        <div class="images">
+          <img src="icons/images.png" alt="Imagens" onclick="images()">
+          <span class="action">&nbsp Imagens</span>
+        </div>
+        <div class="pagination">
+          <img src="icons/pagination.png" alt="Paginação" onclick="pagination()">
+          <span>&nbsp Paginação</span>
+        </div>
+      </div> 
+      <div class="save">
+        <img src="icons/save.png" alt="Salvar como PDF" onclick="save()"><br/>
+      </div>
+      <div class="textSave">
+        <span>Salvar como <br/> PDF</span>
+      </div>
+    </div>
+    <div class="text">
+      <textarea name="text" class="textarea" id="text" cols="105" rows="35"></textarea>
+    </div>
+  </div>
+</body>
+</html>
