@@ -14,9 +14,6 @@
     <!-- CSS-->
     <link rel="stylesheet" href="style.css">
 
-    <!-- JavaScript -->
-    <link rel="stylesheet" href="script.js">
-
     <!-- Fonts-->
   <link rel="preconnect" href="https://fonts.gstatic.com">
 
@@ -28,38 +25,36 @@
   <div class="sheet">
     <div class="tools">
       <div class="copy">
-        <img src="icons/copy.png" alt="Copiar" onclick="copy()">
+        <button id="copy"><img src="icons/copy.png" alt="Copiar"></button>
       </div>
       <div class="textCopy">
         <span class="action">Copiar</span>
       </div>
       <div class="col-2">
         <div class="cut">
-          <img src="icons/cut.png" alt="Recortar" onclick="cut()">
-          <span class="action">Recortar</span>
+          <button id="cut"><img src="icons/cut.png" alt="Recortar"></button>
+          <span class="action">&nbsp Recortar</span>
         </div>
         <div class="paste">
-          <img src="icons/paste.png" alt="Colar" onclick="paste()">
-          <span class="action">Colar</span>
+          <button id="paste"><img src="icons/paste.png" alt="Colar"></button>
+          <span class="action">&nbsp Colar</span>
         </div>
       </div>
       <div class="col-3"> 
         <div class="font">
           <select name="fontFamily" class="select fontFamily" id="fontFamily">
-            <option value="Arial">Arial</option>
-            <option value="Arial">Roboto</option>
-            <option value="Arial" selected>Poppins</option>
+            <option value="arial">Arial</option>
+            <option value="roboto">Roboto</option>
+            <option value="poppins">Poppins</option>
           </select>
         </div>        
         <div class="size">
           <select name="fontSize" class="select fontSize" id="fontSize">
-            <option value="10">10</option>
-            <option value="12">12</option>
-            <option value="14" selected>14</option>
-            <option value="16">16</option>
-            <option value="20">20</option>
+            <option value="size10">10</option>
+            <option value="size12">12</option>
+            <option value="size14">14</option>
           </select>
-          <span class="action uppercase" onclick="uppercase()">AA</span>
+          <button id="uppercase">AA</button>
         </div>
       </div>
 
@@ -77,8 +72,8 @@
           </select>
         </div>        
         <div class="textTransform">
-          <span class="action" onclick="lowercase()">aa</span>
-          <span class="action" onclick="capitalize()">Aa</span>
+          <button id="lowercase">aa</button>
+          <button id="capitalize">Aa</button>
         </div>
       </div>
       <div class="col-7">
@@ -143,8 +138,11 @@
       </div>
     </div>
     <div class="text">
-      <textarea name="text" class="textarea" id="text" cols="105" rows="35"></textarea>
+      <textarea name="text" class="textarea" id="text" cols="130" rows="35"></textarea>
     </div>
   </div>
+
+      <!-- JavaScript -->
+    <script src="script.js"></script>
 </body>
 </html>

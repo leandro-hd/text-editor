@@ -10,7 +10,7 @@ body {
   display: grid;
   grid-template-columns: 3fr 3fr repeat(8, 1fr) 3fr 3fr;
   grid-template-rows: 1fr 1fr;
-  max-width: 960px;
+  max-width: 1422px;
   height: 160px;
   margin-top: 16px;
   background-color: #EEE;
@@ -24,7 +24,6 @@ body {
   display: flex;
   justify-content: center;
   text-align: center;
-  cursor: pointer;
 }
 
 .textCopy {
@@ -40,18 +39,20 @@ body {
 .cut {
   display: flex;
   align-items: center;
-  cursor: pointer;
 }
 
 .paste {
   display: flex;
   align-items: center;
   margin-top: 16px;
-  cursor: pointer;
 }
 
 .col-3 {
   grid-column: span 2;
+}
+
+.font {
+  margin-top: 8px;
 }
 
 .select {
@@ -62,8 +63,33 @@ body {
   outline: none;
 }
 
+.arial {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.roboto {
+  font-family: 'Roboto', sans-serif;
+}
+
+.poppins {
+  font-family: 'Poppins', sans-serif;
+}
+
+
 .fontSize {
   margin-top: 32px;
+}
+
+.size10 {
+  font-size: 10pt;
+}
+
+.size12 {
+  font-size: 12pt;
+}
+
+.size14 {
+  font-size: 14pt;
 }
 
 .uppercase {
@@ -96,31 +122,38 @@ body {
 }
 
 .color {
+  margin-top: 8px;
   margin-left: 4px;
 }
 
 .red {
   background-color: #DC3545;
+  color: #DC3545;
 }
 
 .green {
   background-color: #28A745;
+  color: #28A745;
 }
 
 .blue {
-  background-color: #007BDF
+  background-color: #007BDF;
+  color: #007BDF;
 }
 
 .yellow {
   background-color: #FFC107;
+  color: #FFC107;
 }
 
 .gray {
   background-color: #6C757D;
+  color: #6C757D;
 }
 
 .black {
   background-color: #000;
+  color: #000;
 }
 
 .textTransform {
@@ -189,8 +222,6 @@ body {
 }
 
 .textarea {
-  font-family: 'Poppins', sans-serif;
-  font-size: 12pt;
   background-color: #FFF;
   border: 1px solid #DDD;
   padding: 16px;
