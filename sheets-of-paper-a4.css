@@ -1,0 +1,21 @@
+@import "sheets-of-paper.css";
+
+.page {
+	width: 21cm;
+	height: 29.7cm;
+	padding-left: 2cm;
+	padding-top: 2cm;
+	padding-right: 2cm;
+	padding-bottom: 2cm;
+  background-color: #FFF;
+  border: 1px solid #DDD;
+  outline: none;  
+}
+
+@page {
+	size: A4 portrait;
+	margin-left: 2cm;
+	margin-top: 2cm;
+	margin-right: 2cm;
+	margin-bottom: 2cm;
+}

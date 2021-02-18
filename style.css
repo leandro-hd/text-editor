@@ -10,8 +10,8 @@ body {
   display: grid;
   grid-template-columns: 3fr 3fr repeat(8, 1fr) 3fr 3fr;
   grid-template-rows: 1fr 1fr;
-  max-width: 1422px;
-  height: 160px;
+  max-width: 1024px;
+  height: 180px;
   margin-top: 16px;
   background-color: #EEE;
   border: 1px solid #EEE;
@@ -24,6 +24,10 @@ body {
   display: flex;
   justify-content: center;
   text-align: center;
+}
+
+#copy {
+  cursor: pointer;
 }
 
 .textCopy {
@@ -41,10 +45,18 @@ body {
   align-items: center;
 }
 
+#cut {
+  cursor: pointer;
+}
+
 .paste {
   display: flex;
   align-items: center;
   margin-top: 16px;
+}
+
+#paste {
+  cursor: pointer;
 }
 
 .col-3 {
@@ -75,7 +87,6 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
-
 .fontSize {
   margin-top: 32px;
 }
@@ -96,25 +107,6 @@ body {
   margin-top: 32px;
   margin-left: 4px;
   cursor: pointer;
-}
-
-.import {
-  grid-column: span 8/11;
-  grid-row: 2;
-  font-weight: bold;
-  background-color: #DC3545;
-  margin: 16px;
-  border: 1px solid #DC3545;
-  border-radius: 16px;
-  outline: none;
-  cursor: pointer;
-}
-
-.import:hover{
-        -webkit-transform: scale(0.9);
-        -ms-transform: scale(0.9);
-        transform: scale(0.9);
-        transition: 0.8s;
 }
 
 .col-5 {
@@ -158,6 +150,32 @@ body {
 
 .textTransform {
   margin-top: 32px;
+  cursor: pointer;
+}
+
+.lowercase {
+  margin-top: 2px;
+  margin-left: 4px;
+  cursor: pointer;
+}
+
+.capitalize {
+  margin-top: 2px;
+  margin-left: 4px;
+  cursor: pointer;
+}
+
+.import {
+  grid-column: span 8/11;
+  grid-row: 2;
+  font-weight: 600;
+  background-color: #DC3545;
+  color: #DDD;
+  margin-top: 24px;
+  margin-bottom: 8px;
+  border: 2px solid #DC3545;
+  border-radius: 16px;
+  outline: none;
   cursor: pointer;
 }
 
@@ -219,11 +237,4 @@ body {
   grid-column: 12;
   grid-row: 2;
   text-align: center;
-}
-
-.textarea {
-  background-color: #FFF;
-  border: 1px solid #DDD;
-  padding: 16px;
-  outline: none;
 }

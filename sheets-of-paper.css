@@ -1,0 +1,56 @@
+* {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+
+.page {	
+	box-shadow: 0 4px 5px rgba(75, 75, 75, 0.2);
+  margin: 1cm auto;
+	outline: 0;
+  overflow: scroll;
+}
+
+div.page-break {
+	page-break-after: always;
+}
+
+@media screen {
+	div.page-break::before {
+		content: "";
+		display: block;
+		height: 0.8cm;
+		margin-left: 0.5cm;
+		margin-right: 0.5cm;
+		box-shadow: 0 6px 5px rgba(75, 75, 75, 0.2);
+	}
+
+	div.page-break {
+		display: block;
+		height: 1.8cm;
+		margin-left: -2.5cm;
+		margin-right: -2.5cm;
+		margin-top: 1.2cm;
+		margin-bottom: 2cm;
+	}
+}
+
+h1 {
+	page-break-before: always;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	page-break-after: avoid;
+}
+
+p {
+	margin: 0;
+}
+
+p + p {
+	margin-top: 0.5cm;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}

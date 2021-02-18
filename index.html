@@ -14,8 +14,14 @@
     <!-- CSS-->
     <link rel="stylesheet" href="style.css">
 
+    <!-- CSS Sheets of Paper A4 -->
+    <link rel="stylesheet" type="text/css" href="sheets-of-paper-a4.css">
+
     <!-- Fonts-->
   <link rel="preconnect" href="https://fonts.gstatic.com">
+
+    <!-- Ajax -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
@@ -45,21 +51,18 @@
           <select name="fontFamily" class="select fontFamily" id="fontFamily">
             <option value="arial">Arial</option>
             <option value="roboto">Roboto</option>
-            <option value="poppins">Poppins</option>
+            <option value="poppins" selected>Poppins</option>
           </select>
         </div>        
         <div class="size">
           <select name="fontSize" class="select fontSize" id="fontSize">
             <option value="size10">10</option>
-            <option value="size12">12</option>
+            <option value="size12" selected>12</option>
             <option value="size14">14</option>
           </select>
-          <button id="uppercase">AA</button>
+          <button class="uppercase" id="uppercase">AA</button>
         </div>
       </div>
-
-      <button type="button" class="import">IMPORTAR ARQUIVO EM PDF</button>
-
       <div class="col-5">
         <div class="color">
           <select name="fontColor" class="select fontColor" id="fontColor">
@@ -68,14 +71,17 @@
             <option value="blue" class="blue"></option>
             <option value="yellow" class="yellow"></option>
             <option value="gray" class="gray"></option>
-            <option value="black" class="black"></option>
+            <option value="black" class="black" selected></option>
           </select>
         </div>        
         <div class="textTransform">
-          <button id="lowercase">aa</button>
-          <button id="capitalize">Aa</button>
+          <button class="lowercase" id="lowercase">aa</button>
+          <button class="capitalize" id="capitalize">Aa</button>
         </div>
       </div>
+
+      <button type="button" class="import">IMPORTAR ARQUIVO EM PDF</button>
+
       <div class="col-7">
         <div class="left">
           <img src="icons/left.png" alt="Alinhar à esquerda" onclick="left()">
@@ -137,12 +143,14 @@
         <span>Salvar como <br/> PDF</span>
       </div>
     </div>
-    <div class="text">
-      <textarea name="text" class="textarea" id="text" cols="130" rows="35"></textarea>
+    <div class="document">
+      <div class="page" id="page" contenteditable="true">
+      </div>
     </div>
   </div>
 
       <!-- JavaScript -->
     <script src="script.js"></script>
+
 </body>
 </html>

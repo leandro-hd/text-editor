@@ -1,4 +1,4 @@
-let text = document.getElementById('text');
+let textPage = document.getElementById('page');
 
 let btnCopy = document.getElementById('copy');
 let btnCut = document.getElementById('cut');
@@ -36,15 +36,30 @@ btnCut.addEventListener('click', async() => {
 btnPaste.addEventListener('click', ()=>{
   navigator.clipboard.readText()
   .then((pasteText) => {
-    text.value = pasteText;
+    textPage.value = pasteText;
+    page.innerHTML += pasteText
   })
 })
 
+document.querySelector("div[contenteditable]").addEventListener("paste", function(e) {
+  e.preventDefault();
+  var textTest = e.clipboardData.getData("text/plain");
+  document.execCommand("insertHTML", false, textTest);
+});
+
 let fontFamily = document.getElementById('fontFamily');
 
-fontFamily.addEventListener('change', function() {
-  [].forEach.call(fontFamily.children, function(opt, i) {
-      text.classList.toggle(opt.value, i == fontFamily.selectedIndex);
+window.onload = changeFontFamily();
+
+function changeFontFamily() {
+  [].forEach.call(fontFamily.children, function (opt, i) {
+      textPage.classList.toggle(opt.value, i == fontFamily.selectedIndex);
+  });
+}
+
+fontFamily.addEventListener('change', function () {
+  [].forEach.call(fontFamily.children, function (opt, i) {
+      textPage.classList.toggle(opt.value, i == fontFamily.selectedIndex);
   });
 });
 
@@ -52,32 +67,33 @@ let fontSize = document.getElementById('fontSize');
 
 fontSize.addEventListener('change', function() {
   [].forEach.call(fontSize.children, function(opt, i) {
-      text.classList.toggle(opt.value, i == fontSize.selectedIndex);
+    console.log(textPage)
+      textPage.classList.toggle(opt.value, i == fontSize.selectedIndex);
   });
 });
 
 btnUppercase = document.getElementById('uppercase')
 
 btnUppercase.addEventListener('click', () => {
-  text.value = text.value.toUpperCase();
+  textPage.textContent = textPage.textContent.toUpperCase();
 });
 
 let fontColor = document.getElementById('fontColor');
 
 fontColor.addEventListener('change', function() {
   [].forEach.call(fontColor.children, function(opt, i) {
-      text.classList.toggle(opt.value, i == fontColor.selectedIndex);
+      textPage.classList.toggle(opt.value, i == fontColor.selectedIndex);
   });
 });
 
 btnLowerCase = document.getElementById('lowercase')
 
 btnLowerCase.addEventListener('click', () => {
-  text.value = text.value.toLowerCase();
+  textPage.textContent = textPage.textContent.toLowerCase();
 });
 
 btnCapitalize = document.getElementById('capitalize')
 
 btnCapitalize.addEventListener('click', () => {
-  text.value = text.value.replace(/^\w/, (c) => c.toUpperCase());
+  textPage.textContent = textPage.textContent.replace(/(\b\w)/gi, (c) => c[0].toUpperCase());
 });
