@@ -24,6 +24,7 @@ body {
   display: flex;
   justify-content: center;
   text-align: center;
+  
 }
 
 #copy {
@@ -179,12 +180,33 @@ body {
   cursor: pointer;
 }
 
-.left, .center, .right, .justify {
-  cursor: pointer;
+.leftAlign {
+  margin: 0 2px;
+}
+
+.centerAlign {
+  margin: 0 2px;
+}
+
+.rightAlign {
+  margin: 0 2px;
+}
+
+#rightAlign {
+  text-align: right;
+}
+
+.justifyAlign {
+  margin: 0 2px;
 }
 
 .boldItalic {
-  margin-top: 16px;
+  margin-top: 26px;
+  text-align: center;
+}
+
+#boldItalic{
+  height: 24px;
 }
 
 .bold {
@@ -196,15 +218,22 @@ body {
 }
 
 .underlineStrikethrough {
-  margin-top: 16px;
+  margin-top: 26px;
+  text-align: center;
+}
+
+#underlineStrikethrough{
+  height: 24px;
 }
 
 .subscribeSuperscribe {
-  margin-top: 16px;
+  margin-top: 24px;
+  text-align: center;
 }
 
 .lists {
-  margin-top: 16px;
+  margin-top: 24px;
+  text-align: center;
 }
 
 .col-11 {
@@ -226,6 +255,10 @@ body {
   cursor: pointer;
 }
 
+#file-input {
+  display: none;
+}
+
 .save {
   display: flex;
   justify-content: center;
@@ -237,4 +270,9 @@ body {
   grid-column: 12;
   grid-row: 2;
   text-align: center;
+}
+
+#page {
+  text-align: left;
+  font-weight: 400;
 }

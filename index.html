@@ -31,7 +31,7 @@
   <div class="sheet">
     <div class="tools">
       <div class="copy">
-        <button id="copy"><img src="icons/copy.png" alt="Copiar"></button>
+        <button id="copy"><img src="icons/copy.png" id="imageCopy" alt="Copiar"></button>
       </div>
       <div class="textCopy">
         <span class="action">Copiar</span>
@@ -80,44 +80,44 @@
         </div>
       </div>
 
-      <button type="button" class="import">IMPORTAR ARQUIVO EM PDF</button>
+      <!-- <button type="button" class="import">IMPORTAR ARQUIVO EM PDF</button> -->
 
       <div class="col-7">
         <div class="left">
-          <img src="icons/left.png" alt="Alinhar à esquerda" onclick="left()">
+          <button class="leftAlign" id="alignLeft"><img src="icons/left.png" alt="Alinhar à esquerda"></button>
         </div>
         <div class="boldItalic">
-          <select name="boldItalic" class="select" id="boldItalic">
-            <option value="bold" class="bold">N</option>
-            <option value="italic" class="italic">I</option>
+          <select name="boldItalic" class="select" id="boldItalic" multiple>
+            <option value="bold" class="bold" id="bold">N</option>
+            <option value="italic" class="italic" id="italic">I</option>
           </select>
         </div>
       </div>
       <div class="col-8">
         <div class="center">
-          <img src="icons/center.png" alt="Alinhado ao centro" onclick="center()">
+          <button class="centerAlign" id="alignCenter"><img src="icons/center.png" alt="Alinhado ao centro"></button>
         </div>
         <div class="underlineStrikethrough">
-          <select name="underlineStrikethrough" class="select" id="underlineStrikethrough">
-            <option value="underline" class="underline">_</option>
-            <option value="strikethrough" class="strikethrough">-</option>
+          <select name="underlineStrikethrough" class="select" id="underlineStrikethrough" multiple>
+            <option value="underline" class="underline" id="underline">_</option>
+            <option value="strikethrough" class="strikethrough" id="strikethrough">-</option>
           </select>
         </div>
       </div>
       <div class="col-9">
         <div class="right">
-          <img src="icons/right.png" alt="Alinhar à direita" onclick="right()">
+          <button class="rightAlign" id="alignRight"><img src="icons/right.png" alt="Alinhar à direita"></button>
         </div>
         <div class="subscribeSuperscribe">
           <select name="subscribeSuperscribe" class="select" id="subscribeSuperscribe">
-            <option value="subscribe" class="subscribe">₂</option>
-            <option value="superscribe" class="superscribe">²</option>
+            <option value="subscribe" class="subscribe" id="subscribe">₂</option>
+            <option value="superscribe" class="superscribe" id="superscribe">²</option>
           </select>
         </div>
       </div>
       <div class="col-10">
         <div class="justify">
-          <img src="icons/justify.png" alt="Justificar" onclick="justify()">
+          <button class="justifyAlign" id="alignJustify"><img src="icons/justify.png" alt="Justificar"></button>
         </div>
         <div class="lists">
           <select name="lists" class="select" id="lists">
@@ -128,7 +128,11 @@
       </div>      
       <div class="col-11">
         <div class="images">
-          <img src="icons/images.png" alt="Imagens" onclick="images()">
+          <label for="file-input">
+            <img src="icons/images.png" alt="Imagens"></button>
+          </label>
+        
+          <input id="file-input" type="file" onchange="fileImage(this.files)"/>
           <span class="action">&nbsp Imagens</span>
         </div>
         <div class="pagination">
@@ -148,7 +152,6 @@
       </div>
     </div>
   </div>
-
       <!-- JavaScript -->
     <script src="script.js"></script>
 

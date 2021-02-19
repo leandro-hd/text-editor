@@ -49,14 +49,6 @@ document.querySelector("div[contenteditable]").addEventListener("paste", functio
 
 let fontFamily = document.getElementById('fontFamily');
 
-window.onload = changeFontFamily();
-
-function changeFontFamily() {
-  [].forEach.call(fontFamily.children, function (opt, i) {
-      textPage.classList.toggle(opt.value, i == fontFamily.selectedIndex);
-  });
-}
-
 fontFamily.addEventListener('change', function () {
   [].forEach.call(fontFamily.children, function (opt, i) {
       textPage.classList.toggle(opt.value, i == fontFamily.selectedIndex);
@@ -67,15 +59,19 @@ let fontSize = document.getElementById('fontSize');
 
 fontSize.addEventListener('change', function() {
   [].forEach.call(fontSize.children, function(opt, i) {
-    console.log(textPage)
-      textPage.classList.toggle(opt.value, i == fontSize.selectedIndex);
+    textPage.classList.toggle(opt.value, i == fontSize.selectedIndex);
   });
+  
 });
 
 btnUppercase = document.getElementById('uppercase')
 
 btnUppercase.addEventListener('click', () => {
-  textPage.textContent = textPage.textContent.toUpperCase();
+  if (window.getSelection().toString().length > 0) {
+    textPage.textContent  = textPage.textContent.replace(window.getSelection().toString(), window.getSelection().toString().toUpperCase());
+  } else if (window.getSelection().toString().length == 0) {
+    textPage.textContent = textPage.textContent.toUpperCase();
+  }
 });
 
 let fontColor = document.getElementById('fontColor');
@@ -89,11 +85,59 @@ fontColor.addEventListener('change', function() {
 btnLowerCase = document.getElementById('lowercase')
 
 btnLowerCase.addEventListener('click', () => {
-  textPage.textContent = textPage.textContent.toLowerCase();
+  if (window.getSelection().toString().length > 0) {
+    textPage.textContent  = textPage.textContent.replace(window.getSelection().toString(), window.getSelection().toString().toLowerCase());
+  } else if (window.getSelection().toString().length == 0) {
+    textPage.textContent = textPage.textContent.toLowerCase();
+  }
 });
 
 btnCapitalize = document.getElementById('capitalize')
 
 btnCapitalize.addEventListener('click', () => {
-  textPage.textContent = textPage.textContent.replace(/(\b\w)/gi, (c) => c[0].toUpperCase());
+  if (window.getSelection().toString().length > 0) {
+    textPage.textContent  = textPage.textContent.replace(window.getSelection().toString(), window.getSelection().toString().replace(/(\b\w)/gi, (c) => c[0].toUpperCase()));
+  } else if (window.getSelection().toString().length == 0) {
+    textPage.textContent = textPage.textContent.replace(/(\b\w)/gi, (c) => c[0].toUpperCase());
+  }
 });
+
+let btnAlignLeft = document.getElementById('alignLeft');
+
+btnAlignLeft.addEventListener('click',() => {
+  textPage.style.textAlign='left';
+})
+
+let btnAlignCenter = document.getElementById('alignCenter');
+
+btnAlignCenter.addEventListener('click',() => {
+  textPage.style.textAlign='center';
+})
+
+let btnAlignRight = document.getElementById('alignRight');
+
+btnAlignRight.addEventListener('click',() => {
+  textPage.style.textAlign='right';
+})
+
+let btnAlignJustify = document.getElementById('alignJustify');
+
+btnAlignJustify.addEventListener('click',() => {
+  textPage.style.textAlign='justify';
+})
+
+let boldItalic = document.getElementById('boldItalic')
+
+function fileImage(files){
+  let file = files[0];
+  let img = document.createElement('img');
+  img.file = file;
+  page.appendChild(img)
+  let reader = new FileReader();
+  reader.onload = (function(aImg) {
+    return function(e) {
+      aImg.src = e.target.result;
+    };
+  })(img);
+  reader.readAsDataURL(file);
+}
