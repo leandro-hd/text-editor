@@ -126,7 +126,38 @@ btnAlignJustify.addEventListener('click',() => {
   textPage.style.textAlign='justify';
 })
 
-let boldItalic = document.getElementById('boldItalic')
+let boldItalic = document.getElementById('boldItalic');
+
+boldItalic.addEventListener('click', () => {
+  if (boldItalic.selectedIndex === 0) {
+    textPage.innerHTML = textPage.innerHTML.replace(window.getSelection().toString() , '<strong>' + window.getSelection().toString() + '</strong>');
+  }
+  if (boldItalic.selectedIndex === 1 ) {
+    textPage.innerHTML = textPage.innerHTML.replace(window.getSelection().toString() , '<em>' + window.getSelection().toString() + '</em>');
+  }
+})
+
+let underlineStrikethrough = document.getElementById('underlineStrikethrough');
+
+underlineStrikethrough.addEventListener('click', () => {
+  if (underlineStrikethrough.selectedIndex === 0) {
+    textPage.innerHTML = textPage.innerHTML.replace(window.getSelection().toString() , '<u>' + window.getSelection().toString() + '</u>');
+  }
+  if (underlineStrikethrough.selectedIndex === 1 ) {
+    textPage.innerHTML = textPage.innerHTML.replace(window.getSelection().toString() , '<s>' + window.getSelection().toString() + '</s>');
+  }
+})
+
+let subscribeSuperscribe = document.getElementById('subscribeSuperscribe');
+
+subscribeSuperscribe.addEventListener('click', () => {
+  if (subscribeSuperscribe.selectedIndex === 0) {
+    textPage.innerHTML = textPage.innerHTML.replace(window.getSelection().toString() , '<sub>' + window.getSelection().toString() + '</sub>');
+  }
+  if (subscribeSuperscribe.selectedIndex === 1 ) {
+    textPage.innerHTML = textPage.innerHTML.replace(window.getSelection().toString() , '<sup>' + window.getSelection().toString() + '</sup>');
+  }
+})
 
 function fileImage(files){
   let file = files[0];

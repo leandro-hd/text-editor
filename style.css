@@ -182,14 +182,19 @@ body {
 
 .leftAlign {
   margin: 0 2px;
+  cursor: pointer;
 }
 
 .centerAlign {
   margin: 0 2px;
+  cursor: pointer;
+
 }
 
 .rightAlign {
   margin: 0 2px;
+  cursor: pointer;
+
 }
 
 #rightAlign {
@@ -198,6 +203,8 @@ body {
 
 .justifyAlign {
   margin: 0 2px;
+  cursor: pointer;
+
 }
 
 .boldItalic {
@@ -243,6 +250,7 @@ body {
 .images {
   display: flex;
   align-items: center;
+  margin-top: 8px;
   margin-left: 8px;
   cursor: pointer;
 }
@@ -250,8 +258,8 @@ body {
 .pagination {
   display: flex;
   align-items: center;
-  margin-top: 16px;
-  margin-left: 8px;
+  margin-top: 20px;
+  margin-left: 10px;
   cursor: pointer;
 }
 
