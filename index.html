@@ -12,19 +12,20 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
     <!-- CSS-->
-    <link rel="stylesheet" href="style.css">
-
-    <!-- CSS Sheets of Paper A4 -->
-    <link rel="stylesheet" type="text/css" href="sheets-of-paper-a4.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/sheets-of-paper-a4.css">
 
     <!-- Fonts-->
-  <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 
     <!-- Ajax -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <!-- PDFMake -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.70/pdfmake.min.js" integrity="sha512-HLbtvcctT6uyv5bExN/qekjQvFIl46bwjEq6PBvFogNfZ0YGVE+N3w6L+hGaJsGPWnMcAQ2qK8Itt43mGzGy8Q==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.70/vfs_fonts.min.js" integrity="sha512-VIF8OqBWob/wmCvrcQs27IrQWwgr3g+iA4QQ4hH/YeuYBIoAUluiwr/NX5WQAQgUaVx39hs6l05cEOIGEB+dmA==" crossorigin="anonymous"></script>
 
 </head>
 <body>
@@ -81,6 +82,7 @@
       </div>
 
       <!-- <button type="button" class="import">IMPORTAR ARQUIVO EM PDF</button> -->
+      <span class="paginationNumber">1</span>
 
       <div class="col-7">
         <div class="left">
@@ -120,10 +122,7 @@
           <button class="justifyAlign" id="alignJustify"><img src="icons/justify.png" alt="Justificar"></button>
         </div>
         <div class="lists">
-          <select name="lists" class="select" id="lists">
-            <option value="ol" class="ol">a)</option>
-            <option value="ul" class="ul">•</option>
-          </select>
+          <button class="list" id="lists">•</button>
         </div>
       </div>      
       <div class="col-11">
@@ -141,7 +140,7 @@
         </div>
       </div> 
       <div class="save">
-        <img src="icons/save.png" alt="Salvar como PDF" onclick="save()"><br/>
+        <button id="save"><img src="icons/save.png" id="savePDF" alt="Salvar como PDF"></button>
       </div>
       <div class="textSave">
         <span>Salvar como <br/> PDF</span>
@@ -152,8 +151,8 @@
       </div>
     </div>
   </div>
-      <!-- JavaScript -->
-    <script src="script.js"></script>
 
+      <!-- JavaScript -->      
+    <script src="script.js"></script>   
 </body>
 </html>

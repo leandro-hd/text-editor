@@ -172,3 +172,20 @@ function fileImage(files){
   })(img);
   reader.readAsDataURL(file);
 }
+
+let btnList = document.getElementById('lists');
+
+btnList.addEventListener('click',() => {
+    textPage.innerHTML = textPage.innerHTML.replace(window.getSelection().toString() , '<br/> •&nbsp' + window.getSelection().toString());
+})
+
+let save = document.getElementById('save')
+
+save.addEventListener('click', () => { 
+  var docDefinition = {
+    content: [
+      textPage.textContent
+    ]
+  }
+  pdfMake.createPdf(docDefinition).download();
+})

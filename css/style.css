@@ -23,8 +23,7 @@ body {
 .copy {
   display: flex;
   justify-content: center;
-  text-align: center;
-  
+  text-align: center;  
 }
 
 #copy {
@@ -180,6 +179,21 @@ body {
   cursor: pointer;
 }
 
+.paginationNumber {
+  grid-column: span 1/7;
+  grid-row: 2;
+  font-weight: 600;
+  text-align: center;
+  background-color: #999;
+  color: #000;
+  margin-top: 24px;
+  margin-bottom: 8px;
+  border: 2px solid #666;
+  border-radius: 16px;
+  outline: none;
+  cursor: pointer;
+}
+
 .leftAlign {
   margin: 0 2px;
   cursor: pointer;
@@ -194,17 +208,11 @@ body {
 .rightAlign {
   margin: 0 2px;
   cursor: pointer;
-
-}
-
-#rightAlign {
-  text-align: right;
 }
 
 .justifyAlign {
   margin: 0 2px;
   cursor: pointer;
-
 }
 
 .boldItalic {
@@ -255,6 +263,10 @@ body {
   cursor: pointer;
 }
 
+#file-input {
+  display: none;
+}
+
 .pagination {
   display: flex;
   align-items: center;
@@ -263,14 +275,14 @@ body {
   cursor: pointer;
 }
 
-#file-input {
-  display: none;
-}
 
 .save {
   display: flex;
   justify-content: center;
-  text-align: center;
+  text-align: center;  
+}
+
+#save {
   cursor: pointer;
 }
 
